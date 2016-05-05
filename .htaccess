@@ -1,0 +1,42 @@
+RewriteEngine on
+# add www. to visitors who request the bare domain
+RewriteCond %{HTTP_HOST} ^timthorp.com
+RewriteRule (.*) http://www.timthorp.com/$1 [R=301,L]
+# /new added to both commands during development
+# If requested URL-path plus ".php" exists as a file
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+# Rewrite to append ".php" to extensionless URL-path
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+
+#custom error documents
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+
+#redirect some things
+Redirect 301 /blog/splitting-lastnamefirstname-columns-in-excel/ http://www.timthorp.com/splitting-lastnamefirstname-columns-in-excel
+Redirect 301 /splitting-lastnamefirstname-columns-in-excel http://www.timthorp.com/split-names-excel
+Redirect 301 /blog/change-field-order-in-mysql-table-structure-using-phpmyadmin/ http://www.timthorp.com/change-field-order-in-mysql-table-structure-using-phpmyadmin
+Redirect 301 /blog/data-matchbacks-in-sql-mysql-access/ http://www.timthorp.com/data-matchbacks-in-sql-mysql-access
+Redirect 301 /blog/pulling-a-random-sample-in-ms-access/ http://www.timthorp.com/pulling-a-random-sample-in-ms-access
+
+# PHP error handling for production servers
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_flag log_errors on
+php_flag ignore_repeated_errors off
+php_flag ignore_repeated_source off
+php_flag report_memleaks on
+php_flag track_errors on
+php_value docref_root 0
+php_value docref_ext 0
+php_value error_log /var/www/timthorp.com/PHP_errors.log
+php_value error_reporting -1
+php_value log_errors_max_len 0
+
+<Files PHP_errors.log>
+ Order allow,deny
+ Deny from all
+ Satisfy All
+</Files>
+

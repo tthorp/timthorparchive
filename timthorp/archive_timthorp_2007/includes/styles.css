@@ -1,0 +1,105 @@
+/* CSS Document | relies on Eric Meyer reset.css | Created by Tim Thorp | Updated Feb 27, 2008*/
+
+html, body, div, form, fieldset, th, td {margin: 0; padding: 0;}
+
+fieldset, img {border: 0;}
+
+ol, ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color : #043659;
+}
+
+p, li, td, th, ul, ol, div{
+	font-size : 12px;
+	line-height:1.5em;
+	color:#333333;
+}
+
+strong{
+	color:#060101;
+}
+
+a:link {
+	color : #043659;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+a:visited {
+	color : #1B5C92;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+a:active {
+	color : #043659;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+a:hover {
+	color : #043659;
+	text-decoration: underline;
+	font-weight:bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #060101;
+}
+
+td {
+	vertical-align : top;
+}
+/* these are page layout classes for <div>*/
+
+.wrapper {
+	border-style:solid;
+	border-color:#060101;
+	border-width:2px 2px 2px 2px;
+	padding:.5em .5em 0 .5em;
+	background-color:#FFFFFF;
+	text-align: left;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.vnav{
+	font-size: larger;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	font-weight: bolder;
+	width: 221px;
+	float: left;
+	margin-top: 8px;
+}
+
+.content{
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	border-left-style: solid;
+	border-left-width: thin;
+	width: 534px;
+	margin-top: 8px;
+	margin-left: 240px;
+	margin-bottom: 12px;
+}
+.code{
+	border : solid 1px #060101;
+	font-family : "Courier New", Courier, monospace;
+	background-color:#CCCCCC;
+	padding: 2px 2px 2px 2px;
+	margin: 2px 2px 2px 2px;
+}
+
+
